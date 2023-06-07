@@ -29,7 +29,7 @@ logger -p local7.debug "This is another test message"
 ```
 To send a message with the facility user and priority notice to Rsyslog:
 ```
-To send a message with the facility user and priority notice to Rsyslog:
+logger -p user.notice "This is yet another test message"
 ```
 You can also check the Rsyslog log file to see if it has been updated with new entries. The Rsyslog service keeps various log files in the /var/log directory. You can open these files using native commands such as tail, head, more, less, cat, and so forth, depending on what you are looking for. For example, to display boot and other kernel messages, view /var/log/messages:
 ```
