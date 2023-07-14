@@ -7,6 +7,9 @@ RUN apk --no-cache add rsyslog
 # Copy the rsyslog configuration file
 COPY ./rsyslogd.conf /etc/rsyslogd.conf
 
+# Set the health check command
+HEALTHCHECK --interval=5s --timeout=10s --retries=3 CMD ["pgrep", "rsyslogd"]
+
 # Expose the default syslog port
 EXPOSE 514/tcp 514/udp
 
